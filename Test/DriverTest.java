@@ -38,4 +38,21 @@ public class DriverTest {
     public void TestwaitTillWorking(){
         driver.waitTillbanned();
     }
+    //week 2 tests
+    @Test(expected = IllegalArgumentException.class)
+    public void testDriverNameEmpty(){
+        Driver driver2 = new Driver("",145);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDriverNumberLessThan100(){
+        Driver driver3 = new Driver("Paddy",45);
+    }
+
+    @Test
+    public void testtoString(){
+        String expected = "\nDriver Name: Paul\nDriver Number: 12345";
+        assertEquals(expected, driver.toString());
+    }
+
 }
